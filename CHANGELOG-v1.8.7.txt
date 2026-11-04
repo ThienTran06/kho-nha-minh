@@ -1,0 +1,6 @@
+Kho Nhà Mình v1.8.7
+
+- Đổi toàn bộ chữ hiển thị “khối vàng” thành “Import Nước” / “Báo cáo Nước”.
+- Luồng import vẫn giữ nguyên: người dùng chọn đúng ngày, app chỉ lấy Tồn cuối của báo cáo Nước ngày đó.
+- Làm rõ chức năng Xóa mặt hàng: hàng bị tạo trùng và chưa có lịch sử nhập/xuất/kiểm kê có thể xóa; nếu đã có lịch sử, app chặn để bảo toàn sổ kho.
+- Không thay đổi dữ liệu và nghiệp vụ nhập/xuất hiện có.

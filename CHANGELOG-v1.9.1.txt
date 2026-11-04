@@ -1,0 +1,7 @@
+Kho Nhà Mình v1.9.1
+
+- Xóa mặt hàng dựa đúng vào lịch sử Nhập/Xuất thật.
+- Nếu không có phiếu IN/OUT, cho phép xóa mặt hàng dù có Tồn đầu, điều chỉnh Nước/Excel hoặc kiểm kê; các dữ liệu phụ này được xóa cùng mặt hàng.
+- Nếu có ít nhất một phiếu Nhập hoặc Xuất thật thì vẫn chặn xóa để bảo toàn sổ kho.
+- Đổi nút “Xóa điều chỉnh” thành “Xóa” cho dễ hiểu.
+- Khi danh sách giao diện bị cũ sau thao tác, tự tải lại để tránh báo “Không tìm thấy hàng hóa” do ID cũ.

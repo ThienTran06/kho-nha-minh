@@ -1,0 +1,10 @@
+Kho Nhà Mình Desktop v1.6.1
+
+- Sửa lỗi bấm Xóa/Sửa phiếu đôi lúc báo "Không tìm thấy phiếu": thao tác giờ dùng mã phiếu duy nhất thay vì chỉ dựa vào ID phía giao diện.
+- Cho phép chọn ngày giờ khi tạo phiếu nhập và phiếu xuất.
+- Cho phép tạo phiếu cho ngày hôm qua hoặc các ngày trước đó.
+- Cho phép sửa ngày giờ của phiếu nhập/xuất đã tạo.
+- Báo cáo ngày/tuần/tháng và file Excel theo ngày tự dùng ngày giờ đã chọn của phiếu.
+- Xóa phiếu xuất: cộng trả số lượng vào tồn kho.
+- Xóa phiếu nhập: trừ số lượng khỏi tồn kho; chặn nếu việc xóa làm tồn âm.
+- Tăng phiên bản cache giao diện để tránh Windows app hiển thị JavaScript cũ sau khi nâng cấp.

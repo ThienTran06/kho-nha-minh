@@ -1,0 +1,10 @@
+Kho Nhà Mình v1.6.3
+
+- Thêm nút Lịch sử cho từng mặt hàng trong Hàng trong kho.
+- Xem toàn bộ biến động của một món, không bị giới hạn 100 phiếu gần nhất.
+- Hiển thị tồn hiện tại, tổng đã nhập, tổng đã xuất, số phiếu và tồn sau từng phiếu.
+- Lọc Tất cả / Nhập / Xuất / Tồn đầu & điều chỉnh.
+- Lọc Hôm nay / 7 ngày / 30 ngày / Tháng này / khoảng ngày tùy chọn.
+- Xuất riêng lịch sử một mặt hàng ra Excel.
+- Có nút Nhập món này / Xuất món này ngay từ màn hình lịch sử.
+- Giữ nguyên các sửa lỗi xóa phiếu ổn định của v1.6.2.

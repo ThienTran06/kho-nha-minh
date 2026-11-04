@@ -1,0 +1,11 @@
+Kho Nha Minh Desktop v1.4.0
+
+- Them 2 file Excel theo ngay, tach rieng:
+  1) BANG NHAP HANG VI BIEN
+  2) PHIEU XUAT KHO VI BIEN
+- Chi dua vao file cac giao dich IN/OUT COMPLETED that su phat sinh trong ngay da chon.
+- Hang khong thay doi, ton dau ky, dieu chinh Excel va phieu da Sua sai khong duoc dua vao 2 file nay.
+- File nhap co cac cot theo mau anh: Ngay, Nha cung cap / Hang nhap, So tien tren HD, Nguoi ki nhan, Da gui hinh HD.
+- File xuat co cac cot theo mau anh: STT, Ten hang hoa, Phan loai, Don vi tinh, SL, Bo phan, Ten NV, Ghi chu.
+- Form Nhap/Xuat them phan thong tin bao cao tuy chon, duoc an trong muc mo rong de khong lam roi nguoi dung.
+- Them migration V3 de luu NCC, nguoi nhan, trang thai gui hinh HD, bo phan va ten nhan vien.

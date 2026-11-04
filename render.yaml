@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: kho-nha-minh-cloud
+    runtime: docker
+    plan: free
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: cloud
+      - key: PGHOST
+        sync: false
+      - key: PGPORT
+        value: "5432"
+      - key: PGDATABASE
+        sync: false
+      - key: PGUSER
+        sync: false
+      - key: PGPASSWORD
+        sync: false
+      - key: APP_SETUP_KEY
+        sync: false
+      - key: DB_POOL_SIZE
+        value: "5"

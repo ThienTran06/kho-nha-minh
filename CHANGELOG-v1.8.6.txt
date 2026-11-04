@@ -1,0 +1,7 @@
+Kho Nhà Mình v1.8.6
+
+- Sửa import Nước: người dùng chọn CHÍNH XÁC ngày cần nhập, ví dụ 07/09/2026.
+- Không còn tự chọn ngày mới nhất trong file.
+- Nếu file không có khối vàng đúng ngày đã chọn, app báo các ngày tìm thấy và KHÔNG nhập.
+- Kiểm tra ngày tương lai theo múi giờ Asia/Ho_Chi_Minh, tránh lệch ngày do UTC.
+- Chỉ lấy cột Tồn cuối của đúng khối ngày đã chọn làm Còn lại.

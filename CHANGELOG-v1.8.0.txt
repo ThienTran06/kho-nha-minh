@@ -1,0 +1,29 @@
+KHO NHA MINH v1.8.0 - DE DUNG + AN TOAN + DE BAO TRI
+
+1. GIU NGUYEN CAC PHAN DANG ON
+- Luong Nhap / Xuat / Them hang don gian.
+- Sua/xoa phieu tu dieu chinh ton kho va chan ton am.
+- Mat khau bcrypt + ma khoi phuc.
+- Chay localhost 127.0.0.1.
+- Backup hang ngay, kiem ke, danh sach can mua, audit log.
+- Import/export Excel va quy doi don vi.
+
+2. AN TOAN DU LIEU
+- Restore backup xac nhan 2 buoc.
+- Truoc restore tu dong tao backup JSON "TRUOC-KHOI-PHUC-...".
+
+3. DE DUNG HON
+- Nhac hang sap het sau khi dang nhap.
+- Tuy chon chu lon.
+- Hoan tac nhanh ngay sau Nhap/Xuat.
+- Tim kiem giong noi neu Chrome/Edge ho tro.
+- 3 nut hanh dong chinh co phan hoi hover/click ro hon.
+
+4. BAO CAO
+- Tach thanh 3 tab: Xuat phieu nhanh / Bao cao tong hop / So nhap xuat.
+- Chon tung mat hang duoc an trong muc Nang cao; mac dinh chon tat ca.
+
+5. BAO TRI + TEST
+- Tach frontend: index.html + app.css + app.js.
+- Them InventoryServiceTest cho quy doi, ton am, xoa phieu nhap/xuat.
+- Build EXE chay clean verify, khong skip test.

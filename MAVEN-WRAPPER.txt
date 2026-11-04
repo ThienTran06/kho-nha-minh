@@ -1,0 +1,15 @@
+MAVEN WRAPPER DA DUOC THEM VAO PROJECT
+
+Windows:
+  .\mvnw.cmd clean package -DskipTests
+
+macOS/Linux:
+  ./mvnw clean package -DskipTests
+
+Lan chay dau tien wrapper se tu tai Maven 3.9.16 va kiem tra SHA-512.
+Maven duoc luu trong thu muc .m2 cua nguoi dung, khong can cai Maven vao PATH.
+Script installer/build-windows.ps1 cung da duoc doi sang dung mvnw.cmd.
+
+May build Windows van can:
+- JDK 21
+- WiX Toolset 3.x (de jpackage tao installer EXE)

@@ -1,0 +1,8 @@
+KHO NHA MINH v1.7.1 - NUOC / DO UONG + QUY DOI DON VI
+
+- Them nhom Nuoc / Do uong (Pepsi, Coca, bia, nuoc suoi...).
+- Bao cao Excel tach rieng sheet Nuoc - Do uong.
+- Ho tro quy doi: 1 THUNG/KET/LOC = N LON/CHAI.
+- Ton kho luon luu theo don vi le de co the nhap theo thung va xuat le chinh xac.
+- Phieu luu ca so nguoi dung nhap va so luong quy doi.
+- Lich su/so nhap xuat hien ca 2 THUNG (= 48 LON) khi co quy doi.

@@ -1,0 +1,9 @@
+Kho Nhà Mình v2.0.0 — chuẩn bị đồng bộ nhiều máy qua Internet
+
+- Thêm profile cloud kết nối PostgreSQL, giữ H2 cục bộ làm mặc định cho bản desktop.
+- Thêm Dockerfile và Render Blueprint mẫu.
+- Bật CSRF trong profile cloud; cookie phiên Secure + SameSite Strict.
+- Bảo vệ thiết lập đầu tiên bằng APP_SETUP_KEY; yêu cầu mật khẩu cloud tối thiểu 10 ký tự.
+- Thêm revision endpoint và tự làm mới dữ liệu ở giao diện khoảng mỗi 5 giây khi không có biểu mẫu đang chỉnh sửa.
+- Thêm bản sao JSON an toàn trong database trước khi khôi phục, tối đa 10 bản, cùng endpoint để liệt kê/tải bản sao.
+- Cần triển khai Render/PostgreSQL trong tài khoản của người dùng và kiểm thử trước khi nhập dữ liệu thật. Không tự động triển khai hoặc tạo tài nguyên có phí.

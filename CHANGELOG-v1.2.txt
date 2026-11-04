@@ -1,0 +1,34 @@
+KHO NHA MINH v1.2 - BAO CAO EXCEL
+
+1. Bao cao theo ky
+- Trong ngay
+- Trong tuan (Thu Hai -> Chu Nhat)
+- Trong thang
+
+2. Tong quan hom nay
+- Tong so luong da nhap hom nay
+- Tong so luong da xuat hom nay
+- Tong so luong con trong kho
+- So loai mat hang dang quan ly
+
+3. Chon mat hang de bao cao
+- Co the chon tung mat hang
+- Chon het / bo het
+- Chon het / bo het rieng tung nhom
+
+4. Tach bao cao
+- Sheet "Nguyen lieu - Gia vi"
+- Sheet "Dung cu"
+
+5. Cot trong Excel
+- STT
+- Ma hang
+- Ten hang
+- DVT
+- Ton dau
+- Nhap
+- Xuat
+- Ton cuoi
+- Ghi chu
+
+Luu y: Cot Tồn đầu trong bao cao khong xem giao dich OPENING la "Nhap"; so ton ban dau duoc tinh vao ton dau ky.

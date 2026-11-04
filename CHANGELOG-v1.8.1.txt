@@ -1,0 +1,9 @@
+KHO NHA MINH v1.8.1 - CLAUDE-INSPIRED UI
+
+- Giữ nguyên toàn bộ nghiệp vụ và chức năng của v1.8.0.
+- Chuyển giao diện sang phong cách ấm, tối giản, nhiều khoảng thở, lấy cảm hứng từ Claude.
+- Sidebar sáng, nền kem, chữ nâu đậm, accent cam đất.
+- Tiêu đề dùng font serif hệ thống gần phong cách editorial của Claude; UI dùng system sans.
+- Không đóng gói hoặc phân phối font độc quyền của bên thứ ba; chạy hoàn toàn offline.
+- Giảm shadow, giảm cảm giác dashboard công nghiệp, tăng độ rõ của trạng thái và nút chính.
+- Giữ nguyên chế độ Chữ lớn.

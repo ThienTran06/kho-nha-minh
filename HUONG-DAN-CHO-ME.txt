@@ -1,0 +1,44 @@
+KHO NHÀ MÌNH — MẸ CHỈ CẦN NHỚ 4 VIỆC
+
+1. HÀNG MỚI CHƯA CÓ TRONG KHO
+   Bấm “Thêm mặt hàng”.
+   Ghi tên hàng, đơn vị và số lượng đang có.
+
+2. MUA HÀNG VỀ
+   Bấm “Nhập hàng”.
+   Chọn hàng -> ghi số lượng -> Tiếp tục -> Xác nhận nhập.
+
+3. LẤY HÀNG RA
+   Bấm “Xuất hàng”.
+   Chọn hàng -> ghi số lượng -> Tiếp tục -> Xác nhận xuất.
+
+4. GHI NHẦM
+   Vào “Sổ nhập xuất”.
+   Tìm dòng vừa ghi nhầm -> bấm “Sửa sai”.
+   Không tự sửa số tồn của hàng.
+
+Nếu thấy chữ “Sắp hết” hoặc “Hết hàng”, đó chỉ là lời nhắc nên mua thêm.
+Nếu phần mềm hỏi mật khẩu, nhập mật khẩu để mở kho.
+Nếu phần mềm báo không kết nối được, hãy gọi người cài đặt phần mềm.
+
+NẾU CHỌN NHẦM NHÓM HÀNG:
+- Vào Hàng trong kho -> bấm Sửa -> chọn lại Nhóm hàng -> Lưu.
+
+NẾU TỒN ĐẦU BAN ĐẦU NHẬP SAI:
+- Vào Hàng trong kho -> bấm Tồn đầu ở đúng mặt hàng.
+- Gõ lại số đúng. Phần mềm tự tính lại số còn trong kho.
+- Không sửa tồn đầu để thay cho việc Nhập/Xuất hằng ngày.
+
+FILE NƯỚC THEO THÁNG:
+- Vào Hàng trong kho -> File Nước theo tháng.
+- Chọn đúng tháng rồi chọn file Excel.
+- Xem phần kiểm tra trước, sau đó mới bấm Nhập lịch sử Nước.
+
+CHUYỂN KHO SANG MÁY TÍNH KHÁC:
+1. Trên máy cũ, mở Kho Nhà Mình -> Cài đặt.
+2. Bấm “Xuất file chuyển máy”. Lưu file .json vào USB hoặc nơi dễ tìm.
+3. Chép file đó sang máy mới.
+4. Cài và mở Kho Nhà Mình trên máy mới. Lần đầu, tạo mật khẩu cho máy mới.
+5. Vào Cài đặt -> “Nhập file từ máy khác” -> chọn file .json vừa chép.
+6. Kiểm tra số mặt hàng/giao dịch trên màn hình rồi xác nhận nhập dữ liệu.
+LƯU Ý: dữ liệu trên máy nhận sẽ được thay bằng dữ liệu từ file. Mật khẩu máy mới vẫn giữ nguyên. Giữ file chuyển máy riêng tư vì trong đó có dữ liệu kho.

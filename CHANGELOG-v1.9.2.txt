@@ -1,0 +1,7 @@
+Kho Nhà Mình v1.9.2
+
+- Thêm nút Xóa trực tiếp cho phiếu Nhập/Xuất trong lịch sử từng mặt hàng.
+- Xóa phiếu Xuất sẽ trả số lượng về kho.
+- Xóa phiếu Nhập sẽ trừ số lượng đã nhập khỏi kho và chặn nếu làm tồn âm.
+- Sau khi xóa, lịch sử mặt hàng và tồn kho được tải lại ngay.
+- Giữ nguyên chức năng xóa Nhập/Xuất trong Sổ nhập xuất.

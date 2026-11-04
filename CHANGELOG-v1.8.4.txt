@@ -1,0 +1,16 @@
+Kho Nhà Mình v1.8.4
+
+FIX IMPORT NƯỚC KHỐI VÀNG
+- File NƯỚC có nhiều khối BÁO CÁO XUẤT NHẬP TỒN theo từng ngày.
+- Không còn lấy khối vàng đầu tiên trong sheet.
+- Chọn khối có ngày mới nhất trong tháng đã chọn. Với file NƯỚC CÁC LOẠI T9.xlsx hiện tại là NGÀY 7/9.
+- Chỉ cột TỒN CUỐI của khối này được dùng làm số CÒN LẠI trong kho.
+- Không cộng lại Tồn đầu/Nhập/Xuất/HT để tránh sai số do công thức/bảng phụ.
+- Bảng CÂY/TỦ/LẺ bên phải và các vùng khác không được nhập.
+
+Tồn cuối 7/9 mẫu:
+STING 301; BIVINA 155; KEN 250ML 633; KEN 330ML 261; SAIGON LAGER 132;
+TIGER BẠC 250ML 1; TIGER BẠC 330ML 1627; ĐÁ LẠNH 0; KHĂN LẠNH 4979;
+MIRINDA XÁ XỊ 43; TĂNG LỰC ROCKSTAR 23; PEPSI KHAY 485;
+TEA+ TRÀ Ô LONG CHANH 136; TWISTER CAM 32; AQUAFINA 473;
+KEN KHÔNG ĐỘ 250ML 3; 7 UP KHAY 264; BÁNH TRÁNG 333; ĐẬU PHỘNG 341.

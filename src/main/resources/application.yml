@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: kho-nha-minh-desktop
+  datasource:
+    url: jdbc:h2:file:${user.home}/KhoNhaMinh/data/kho;MODE=MySQL;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: Asia/Ho_Chi_Minh
+  flyway:
+    enabled: true
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+  jackson:
+    time-zone: Asia/Ho_Chi_Minh
+server:
+  address: 127.0.0.1
+  port: 17865
+  servlet:
+    session:
+      timeout: 30m
+      cookie:
+        http-only: true
+        same-site: strict
+        secure: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+logging:
+  file:
+    name: ${user.home}/KhoNhaMinh/logs/kho-nha-minh.log
+  level:
+    root: WARN
+    com.khonhaminh: INFO

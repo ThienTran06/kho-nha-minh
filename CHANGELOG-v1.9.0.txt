@@ -1,0 +1,9 @@
+Kho Nhà Mình v1.9.0
+
+- Cho phép xóa an toàn các điều chỉnh chốt tồn Nước ở cả Lịch sử mặt hàng và Sổ nhập xuất.
+- Nhận diện điều chỉnh Nước theo nguồn giao dịch (sourceKey/note), không phụ thuộc nhóm hiện tại của mặt hàng.
+- Vẫn khóa xóa các điều chỉnh kiểm kê/Excel nội bộ không phải chốt tồn Nước.
+- Xóa chữ “khối vàng” khỏi phần hiển thị ghi chú cũ trên giao diện (không sửa dữ liệu gốc).
+- Nhãn giao diện phân biệt “Điều chỉnh Nước” với điều chỉnh khác.
+- Bổ sung nhãn nhật ký cho Import Nước và Hoàn tác import Nước.
+- Bổ sung test cho xóa điều chỉnh Nước và bảo vệ điều chỉnh thường.

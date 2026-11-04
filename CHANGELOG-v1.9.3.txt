@@ -1,0 +1,9 @@
+Kho Nhà Mình v1.9.3
+
+- Thêm luồng “Xuất file chuyển máy” và “Nhập file từ máy khác”.
+- File giữ hàng hóa, số tồn, lịch sử nhập/xuất, khoản chi, kiểm kê và nhật ký.
+- Trước khi nhập, kiểm tra file và xem trước số lượng dữ liệu.
+- Có hai bước xác nhận vì dữ liệu hiện tại trên máy nhận sẽ được thay thế.
+- Tự lưu bản an toàn của máy nhận trước khi khôi phục.
+- Mật khẩu không chuyển theo file; máy nhận giữ mật khẩu riêng.
+- File cũ từ chức năng sao lưu vẫn dùng được nếu đúng định dạng Kho Nhà Mình.

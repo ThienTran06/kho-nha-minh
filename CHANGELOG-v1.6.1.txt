@@ -1,0 +1,7 @@
+Kho Nhà Mình v1.6.1
+
+- Sửa lỗi xóa phiếu vừa tạo báo "Không tìm thấy phiếu PN-...".
+- Nút Xóa dùng ID database (khóa chính) thay vì mã phiếu PN/PX.
+- Xóa phiếu xuất vẫn cộng trả hàng vào tồn kho.
+- Xóa phiếu nhập vẫn trừ số hàng của phiếu khỏi tồn kho và chặn nếu làm tồn âm.
+- Chức năng sửa phiếu và thay đổi ngày giờ giữ nguyên.

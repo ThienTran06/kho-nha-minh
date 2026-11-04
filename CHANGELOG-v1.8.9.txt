@@ -1,0 +1,6 @@
+Kho Nhà Mình v1.8.9
+
+- Trong Lịch sử của nhóm Nước / Đồ uống, các dòng Điều chỉnh được tạo bởi chức năng chốt tồn/import Nước có nút Xóa.
+- Xóa điều chỉnh giảm sẽ cộng trả lại tồn kho; xóa điều chỉnh tăng sẽ trừ lại tồn kho và chặn nếu làm tồn âm.
+- Không mở quyền xóa cho Tồn đầu hoặc các điều chỉnh nội bộ khác.
+- Phiếu Nhập/Xuất giữ nguyên cơ chế xóa hiện có trong Sổ nhập xuất.

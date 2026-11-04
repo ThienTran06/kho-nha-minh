@@ -1,0 +1,11 @@
+Kho Nhà Mình Desktop v1.5.0
+
+- Có thể thêm mặt hàng mới thủ công, không cần mặt hàng tồn tại trong file Excel.
+- Trong màn hình Nhập hàng có nút “Hàng chưa có? Thêm mới”, thêm xong quay lại nhập hàng ngay.
+- Cho phép sửa phiếu nhập và phiếu xuất: sửa số lượng, đơn giá, ghi chú và thông tin báo cáo.
+- Khi sửa số lượng, tồn kho tự điều chỉnh theo phần chênh lệch.
+- Cho phép xóa phiếu nhập/xuất.
+  + Xóa phiếu xuất: số lượng được cộng trả lại kho.
+  + Xóa phiếu nhập: số lượng đã nhập bị trừ khỏi kho.
+- Không cho xóa/giảm phiếu nhập nếu lượng hàng đó đã được xuất khiến tồn hiện tại không đủ để hoàn tác.
+- Phiếu tồn đầu và điều chỉnh Excel không thể sửa/xóa thủ công để bảo vệ lịch sử kho.

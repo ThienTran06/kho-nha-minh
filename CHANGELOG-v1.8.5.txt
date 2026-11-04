@@ -1,0 +1,8 @@
+Kho Nhà Mình v1.8.5
+
+- Thêm Hoàn tác lần import Nước gần nhất.
+- Hoàn tác theo đúng batch import và đảo ngược các phiếu theo thứ tự ngược.
+- Tự xóa mặt hàng chỉ được tạo bởi lần import sai nếu sau hoàn tác không còn lịch sử.
+- Chặn hoàn tác nếu mặt hàng đã có phiếu phát sinh mới sau lần import để tránh làm sai tồn.
+- Xác nhận 2 bước trước khi hoàn tác.
+- Giữ logic v1.8.4: chỉ lấy Tồn cuối của khối vàng ngày mới nhất (ví dụ 7/9).

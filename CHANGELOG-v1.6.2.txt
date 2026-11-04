@@ -1,0 +1,9 @@
+Kho Nhà Mình v1.6.2
+
+- Sửa dứt điểm luồng xóa phiếu trên nền v1.6.1.
+- Backend flush DELETE + cập nhật tồn kho trước khi trả response.
+- DELETE trả về ID hàng và tồn kho mới để giao diện cập nhật ngay.
+- Nút Xóa bị khóa trong lúc xử lý, tránh gửi hai request.
+- Sau khi xóa thành công, phiếu biến mất ngay rồi mới đồng bộ lại từ server.
+- GET dùng no-store + cache-buster để tránh danh sách cũ.
+- Nếu response xóa bị lỗi/mất nhưng server thực tế đã xóa, frontend xác minh lại và coi là thành công.

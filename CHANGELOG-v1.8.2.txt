@@ -1,0 +1,26 @@
+KHO NHA MINH v1.8.2
+
+1. Import file Nuoc theo thang
+- Ho tro file dang NƯỚC CÁC LOẠI T9.xlsx, sheet THEO DÕI THÁNG ...
+- Nguoi dung chon thang du lieu truoc khi import.
+- Doc tung ngay: Ton dau / Nhap / Xuat / Ton cuoi.
+- Tao lich su nhap-xuat theo ngay cho tung mat hang.
+- Cong thuc Excel nhu =15*24 duoc tinh bang Apache POI FormulaEvaluator.
+- Canh bao neu tieu de trong file ghi thang khac thang nguoi dung da chon.
+- Bo qua bien dong o ngay tuong lai.
+- Chien luoc source_key chong import trung cung mat hang/ngay/loai giao dich.
+- Dong bo ton cuoi theo file sau khi import de ton hien tai khong bi lech.
+
+2. Doi nhom hang thu cong
+- Co the doi Cong cu / Dung cu -> Nguyen lieu / Gia vi trong nut Sua.
+- Nhom da sua thu cong duoc khoa; import Excel lan sau khong tu doi nguoc lai theo ten sheet.
+
+3. Sua ton dau
+- Moi mat hang co nut Ton dau.
+- Cho xem ton dau dang luu va sua ve gia tri moi.
+- Tu tinh chenhlech vao ton hien tai.
+- Chan giam ton dau neu lam ton hien tai am.
+- Ghi Audit Log de truy vet.
+
+4. Backup
+- Backup format 1.3 luu them categoryLocked va sourceKey de khoi phuc day du cac tinh nang moi.

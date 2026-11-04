@@ -1,0 +1,9 @@
+KHO NHA MINH v1.8.3
+
+- Sửa importer Nước theo đúng workflow thực tế.
+- Chỉ import khối màu vàng BÁO CÁO XUẤT NHẬP TỒN ngày 7/9 (hoặc ngày ghi trên tiêu đề khối).
+- Không lấy số liệu từ các bảng CÂY/TỦ/LẺ bên phải.
+- Không lấy dữ liệu từ sheet THEO DÕI THÁNG 9.
+- Đọc Tồn đầu / Nhập / Xuất / HT / Tồn cuối / Ghi chú.
+- HT được ghi thành điều chỉnh giảm.
+- Giữ chức năng đổi nhóm hàng và sửa tồn đầu của v1.8.2.

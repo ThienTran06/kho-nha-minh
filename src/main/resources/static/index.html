@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f7f4ee">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon-192.png">
+<title>Kho Nhà Mình</title>
+<link rel="stylesheet" href="/app.css?v=2.0.0">
+</head>
+<body>
+<div id="auth" class="auth">
+  <div class="auth-card">
+    <div class="logo">📦</div><h1>Kho Nhà Mình</h1>
+    <p id="authText">Đang mở kho...</p>
+    <div id="setupFields" class="hidden">
+      <p><b>Lần đầu sử dụng:</b> tạo một mật khẩu để người khác không mở được sổ kho.</p>
+      <div id="setupKeyWrap" class="hidden"><input id="setupKey" type="password" autocomplete="off" placeholder="Mã thiết lập do người cài đặt cung cấp"><small class="hint">Chỉ dùng một lần để bảo vệ bước thiết lập trên Internet.</small></div>
+      <input id="setupPassword" type="password" autocomplete="new-password" placeholder="Tạo mật khẩu">
+      <small id="setupPasswordHint" class="hint">Mật khẩu cần ít nhất 6 ký tự.</small>
+      <input id="setupPassword2" type="password" autocomplete="new-password" placeholder="Nhập lại mật khẩu">
+      <button class="btn primary large" onclick="setupApp()">Bắt đầu dùng</button>
+    </div>
+    <div id="loginFields" class="hidden">
+      <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Nhập mật khẩu">
+      <button class="btn primary large" onclick="login()">Mở kho</button><button class="btn" style="margin-top:8px" onclick="forgotPassword()">Quên mật khẩu?</button>
+    </div>
+    <div id="authError" class="error" role="alert"></div>
+  </div>
+</div>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="logo">📦</div><div><b>Kho Nhà Mình</b><small>Sổ kho đơn giản</small></div></div>
+  <div class="nav-title">Dùng hằng ngày</div>
+  <button class="nav active" data-page="dashboard">🏠 Hôm nay</button>
+  <button class="nav" onclick="openTx('IN')">📥 Nhập hàng</button>
+  <button class="nav" onclick="openTx('OUT')">📤 Xuất hàng</button>
+  <button class="nav" data-page="products">📦 Hàng trong kho</button>
+  <button class="nav" data-page="expenses">💵 Ghi tiền chi</button>
+  <div class="nav-title">Xem lại</div>
+  <button class="nav" data-page="reports">📊 Báo cáo & sổ kho</button>
+  <button class="nav" data-page="operations">✅ Kiểm kê & cần mua</button>
+  <button class="nav" data-page="settings">⚙ Cài đặt</button>
+  <div class="sidebar-foot">Nếu không biết làm gì, bấm <b>Hướng dẫn sử dụng</b> trong Cài đặt.<br><br>Phiên bản <b>2.0.0</b></div>
+</aside>
+<main class="main">
+  <div class="top"><div><h1 id="pageTitle">Hôm nay</h1><p id="today"></p></div><div class="search">🔎 <input id="globalSearch" placeholder="Tìm tên hàng..."><button id="voiceSearchBtn" class="voice-search hidden" type="button" onclick="startVoiceSearch()" title="Tìm bằng giọng nói" aria-label="Tìm bằng giọng nói">🎤</button></div></div>
+
+  <section id="dashboard" class="page active">
+    <div id="firstUse" class="welcome hidden"><h2>👋 Bắt đầu rất đơn giản</h2><p>Kho đang trống. Hãy thêm mặt hàng đầu tiên. Sau đó mỗi ngày chỉ cần dùng <b>Nhập hàng</b> hoặc <b>Xuất hàng</b>.</p><button class="btn primary large" style="margin-top:13px" onclick="openProduct()">＋ Thêm mặt hàng đầu tiên</button></div>
+    <div class="big-actions">
+      <button class="big-action in" onclick="openTx('IN')"><span>📥</span>Nhập hàng<small>Khi mua hàng về kho</small></button>
+      <button class="big-action out" onclick="openTx('OUT')"><span>📤</span>Xuất hàng<small>Khi lấy hàng ra khỏi kho</small></button>
+      <button class="big-action add" onclick="openProduct()"><span>➕</span>Thêm mặt hàng<small>Khi có loại hàng mới</small></button>
+    </div>
+    <div class="stats"><div class="stat"><span class="tag">Mặt hàng</span><strong id="sProducts">0</strong><small>loại đang quản lý</small></div><div class="stat"><span class="tag green">Trong kho</span><strong id="sUnits">0</strong><small>tổng số lượng</small></div><div class="stat"><span class="tag red">Cần mua thêm</span><strong id="sLow">0</strong><small>mặt hàng sắp hết</small></div><div class="stat"><span class="tag gold">Tiền hàng ước tính</span><strong id="sValue">0 ₫</strong><small>theo giá nhập đã ghi</small></div></div>
+    <div class="grid"><div><div class="panel"><div class="panel-head"><h2>Việc vừa làm</h2><button class="btn small" data-page="reports">Xem sổ kho</button></div><div id="recentTx" class="recent"></div></div></div><div><div class="panel"><div class="panel-head"><h2>Hàng cần chú ý</h2></div><div id="lowStock"></div></div><div class="panel"><div class="panel-head"><h2>Cần ghi thêm?</h2></div><div class="quick"><button class="btn" onclick="openExpense()">💵 Ghi một khoản chi</button><button class="btn" data-page="products">📦 Xem tất cả hàng</button><button class="btn" data-page="operations">✅ Kiểm kê & cần mua</button></div></div></div></div>
+  </section>
+
+  <section id="products" class="page"><div class="panel"><div class="panel-head"><h2>Hàng trong kho</h2><div class="row-actions"><button class="btn" onclick="openExcelImport()">📄 Nhập từ Excel</button><button class="btn" onclick="openDrinkMonthlyImport()">🥤 Import Nước</button><button class="btn primary" onclick="openProduct()">＋ Thêm mặt hàng</button></div></div><div class="note" style="margin-bottom:13px">Có sẵn file theo dõi kho? Bấm <b>Nhập từ Excel</b>. Phần mềm đọc trực tiếp các cột <b>Mã hàng, Tên NVL, ĐVT, Tồn cuối, Ghi chú</b> và tự nhận sheet <b>NVL / CCDC</b>.</div><div class="toolbar"><input id="productSearch" placeholder="Gõ tên hoặc mã hàng để tìm"><select id="categoryFilter"><option value="all">Tất cả nhóm</option><option value="Nguyên liệu / Gia vị">Nguyên liệu / Gia vị</option><option value="Công cụ / Dụng cụ">Công cụ / Dụng cụ</option><option value="Nước / Đồ uống">Nước / Đồ uống</option><option value="Khác">Khác</option></select><select id="stockFilter"><option value="all">Tất cả tồn kho</option><option value="low">Chỉ hàng sắp hết</option><option value="ok">Chỉ hàng còn đủ</option></select></div><div class="table-wrap"><table class="table"><thead><tr><th>Tên hàng</th><th>Nhóm</th><th>Đơn vị</th><th class="right">Còn lại</th><th class="right">Báo khi còn</th><th class="right">Giá nhập</th><th>Tình trạng</th><th></th></tr></thead><tbody id="productRows"></tbody></table></div></div></section>
+
+  <section id="expenses" class="page"><div class="panel"><div class="panel-head"><h2>Tiền đã chi</h2><button class="btn primary" onclick="openExpense()">＋ Ghi khoản chi</button></div><div class="note" style="margin-bottom:12px">Ví dụ: tiền vận chuyển, tiền điện, thuê kho hoặc chi phí khác.</div><div class="table-wrap"><table class="table"><thead><tr><th>Ngày</th><th>Khoản chi</th><th>Ghi chú</th><th class="right">Số tiền</th><th></th></tr></thead><tbody id="expenseRows"></tbody></table></div></div></section>
+
+  <section id="reports" class="page">
+    <div class="stats">
+      <div class="stat"><span class="tag green">Nhập hôm nay</span><strong id="rTodayIn">0</strong><small>tổng số lượng đã nhập</small></div>
+      <div class="stat"><span class="tag red">Xuất hôm nay</span><strong id="rTodayOut">0</strong><small>tổng số lượng đã xuất</small></div>
+      <div class="stat"><span class="tag">Còn trong kho</span><strong id="rCurrentStock">0</strong><small>tổng số lượng hiện tại</small></div>
+      <div class="stat"><span class="tag gold">Mặt hàng</span><strong id="rProductCount">0</strong><small>loại đang quản lý</small></div>
+    </div>
+    <div class="report-tabs" role="tablist" aria-label="Loại báo cáo">
+      <button id="reportTabQuick" class="btn primary" onclick="showReportTab('quick')">📥 Xuất phiếu nhanh</button>
+      <button id="reportTabCustom" class="btn" onclick="showReportTab('custom')">📄 Báo cáo tổng hợp</button>
+      <button id="reportTabLedger" class="btn" onclick="showReportTab('ledger')">📚 Sổ nhập xuất</button>
+    </div>
+    <div id="reportQuick" class="report-tab-panel">
+    <div class="panel report-builder">
+      <div class="panel-head"><div><h2>📥📤 Phiếu nhập / xuất theo ngày</h2><div class="report-help">Chọn một ngày rồi xuất đúng những món có phát sinh nhập hoặc xuất trong ngày đó.</div></div></div>
+      <div class="toolbar">
+        <input id="movementReportDate" type="date">
+        <button class="btn green large" onclick="exportDailyMovement('IN')">📥 Xuất file NHẬP</button>
+        <button class="btn red large" onclick="exportDailyMovement('OUT')">📤 Xuất file XUẤT</button>
+      </div>
+      <div class="note"><b>File Nhập:</b> theo mẫu “Bảng nhập hàng Vị Biển”. <b>File Xuất:</b> theo mẫu “Phiếu xuất kho Vị Biển”. Nếu ngày đó không có giao dịch tương ứng, phần mềm sẽ báo và không tạo file rỗng.</div>
+    </div>
+    </div>
+    <div id="reportCustom" class="report-tab-panel hidden">
+    <div class="panel report-builder">
+      <div class="panel-head"><div><h2>📄 Tạo báo cáo Excel</h2><div class="report-help">Chọn ngày / tuần / tháng và chỉ đánh dấu những mặt hàng muốn đưa vào báo cáo.</div></div><button class="btn green large" onclick="exportExcelReport()">Tải báo cáo Excel</button></div>
+      <div class="toolbar">
+        <select id="reportPeriod" onchange="refreshReportPreview()"><option value="DAY">Trong ngày</option><option value="WEEK">Trong tuần</option><option value="MONTH">Trong tháng</option></select>
+        <input id="reportDate" type="date" onchange="refreshReportPreview()">
+        <button class="btn small" onclick="selectReportProducts(true)">Chọn tất cả</button>
+        <button class="btn small" onclick="selectReportProducts(false)">Bỏ chọn tất cả</button>
+      </div>
+      <div id="reportPeriodText" class="note">Đang chuẩn bị báo cáo...</div>
+      <div id="reportPreview" class="report-preview"></div>
+      <details class="optional report-advanced">
+        <summary>⚙ Tùy chọn mặt hàng (nâng cao) — mặc định lấy tất cả</summary>
+        <div class="report-groups" style="margin-top:12px">
+        <div class="report-group"><div class="report-group-head"><h3>🥬 Nguyên liệu / Gia vị</h3><div class="row-actions"><button class="btn small" onclick="toggleReportGroup('Nguyên liệu / Gia vị',true)">Chọn hết</button><button class="btn small" onclick="toggleReportGroup('Nguyên liệu / Gia vị',false)">Bỏ hết</button></div></div><div id="reportIngredients" class="check-list"></div></div>
+        <div class="report-group"><div class="report-group-head"><h3>🧰 Công cụ / Dụng cụ</h3><div class="row-actions"><button class="btn small" onclick="toggleReportGroup('Công cụ / Dụng cụ',true)">Chọn hết</button><button class="btn small" onclick="toggleReportGroup('Công cụ / Dụng cụ',false)">Bỏ hết</button></div></div><div id="reportTools" class="check-list"></div></div>
+        <div class="report-group"><div class="report-group-head"><h3>🥤 Nước / Đồ uống</h3><div class="row-actions"><button class="btn small" onclick="toggleReportGroup('Nước / Đồ uống',true)">Chọn hết</button><button class="btn small" onclick="toggleReportGroup('Nước / Đồ uống',false)">Bỏ hết</button></div></div><div id="reportDrinks" class="check-list"></div></div>
+        </div>
+      </details>
+      <div class="note"><b>File Excel được tách riêng:</b> các sheet riêng <b>Nguyên liệu - Gia vị</b>, <b>Dụng cụ</b> và <b>Nước - Đồ uống</b>. Mỗi sheet có Tồn đầu, Nhập, Xuất và Tồn cuối cho kỳ đã chọn.</div>
+    </div>
+    </div>
+    <div id="reportLedger" class="report-tab-panel hidden">
+    <div class="panel"><div class="panel-head"><h2>Sổ nhập xuất</h2></div><div class="note" style="margin-bottom:12px">Nếu ghi nhầm một phiếu, bấm <b>Sửa sai</b>. Phần mềm sẽ tự trả lại số tồn đúng.</div><div class="table-wrap"><table class="table"><thead><tr><th>Thời gian</th><th>Việc làm</th><th>Hàng hóa</th><th class="right">Số lượng</th><th>Ghi chú</th><th></th></tr></thead><tbody id="txRows"></tbody></table></div></div>
+    </div>
+  </section>
+
+  <section id="operations" class="page">
+    <div class="grid">
+      <div>
+        <div class="panel">
+          <div class="panel-head"><div><h2>✅ Kiểm kê thực tế</h2><div class="report-help">Dùng khi đếm hàng ngoài kho. Phần mềm sẽ so sánh với số đang lưu và tự điều chỉnh phần chênh lệch.</div></div><button class="btn primary" onclick="openStocktake()">＋ Kiểm kê một món</button></div>
+          <div class="note" style="margin-bottom:12px"><b>Ví dụ:</b> phần mềm ghi 10 chai nhưng đếm thực tế còn 8 → xác nhận kiểm kê sẽ tự điều chỉnh -2 và lưu lịch sử.</div>
+          <div class="table-wrap"><table class="table"><thead><tr><th>Ngày giờ</th><th>Mặt hàng</th><th class="right">Hệ thống</th><th class="right">Thực tế</th><th class="right">Chênh lệch</th><th>Ghi chú</th></tr></thead><tbody id="stocktakeRows"></tbody></table></div>
+        </div>
+      </div>
+      <div>
+        <div class="panel">
+          <div class="panel-head"><div><h2>🛒 Danh sách cần mua</h2><div class="report-help">Tự lấy những món đã chạm mức “Báo sắp hết”.</div></div></div>
+          <div id="purchaseList"></div>
+          <div class="row-actions" style="margin-top:12px"><button class="btn small" onclick="togglePurchaseAll(true)">Chọn hết</button><button class="btn small" onclick="togglePurchaseAll(false)">Bỏ hết</button><button class="btn green" onclick="exportPurchaseList()">📊 Xuất Excel cần mua</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="settings" class="page"><div class="panel"><div class="panel-head"><h2>Cài đặt & an toàn dữ liệu</h2></div><div class="settings"><button class="btn primary large" onclick="openHelp()">❓ Hướng dẫn sử dụng</button><div class="note">Mẹ chỉ cần nhớ các việc chính: <b>Nhập hàng</b>, <b>Xuất hàng</b>, <b>Thêm mặt hàng</b> và thỉnh thoảng <b>Kiểm kê</b> để đối chiếu số thực tế.</div><div class="row-actions"><button id="installBtn" class="btn hidden" onclick="installApp()">📱 Đưa ra màn hình chính</button><button class="btn" onclick="openPassword()">🔑 Đổi mật khẩu</button><button class="btn" onclick="openRecoveryCode()">🧾 Tạo mã khôi phục</button><button class="btn" data-page="operations">✅ Kiểm kê & cần mua</button><button class="btn" onclick="openAuditLog()">🕘 Nhật ký thay đổi</button><button class="btn red" onclick="logout()">🔒 Khóa phần mềm</button></div><div class="panel" style="box-shadow:none;margin:6px 0 0"><div class="panel-head"><h2>👓 Dễ nhìn hơn</h2></div><div class="note" style="margin-bottom:10px">Nếu chữ hơi nhỏ, chọn <b>Chữ lớn</b>. Cài đặt này được nhớ riêng trên máy đang dùng.</div><div class="row-actions"><button id="fontNormalBtn" class="btn" onclick="setFontMode('normal')">Chữ bình thường</button><button id="fontLargeBtn" class="btn" onclick="setFontMode('large')">🔎 Chữ lớn</button></div></div><div class="panel" style="box-shadow:none;margin:6px 0 0"><div class="panel-head"><h2>🔁 Chuyển dữ liệu sang máy khác</h2></div><div class="note" style="margin-bottom:10px"><b>Máy cũ:</b> bấm Xuất file chuyển máy. Chép file sang USB/Zalo/Google Drive.<br><b>Máy mới:</b> cài và mở Kho Nhà Mình, tạo mật khẩu trên máy mới, rồi chọn Nhập file từ máy cũ.<br>File chứa hàng hóa, số tồn, lịch sử nhập/xuất, chi phí, kiểm kê và nhật ký. Mật khẩu không chuyển theo file; máy mới giữ mật khẩu riêng. File có dữ liệu kho nên hãy giữ riêng, không đăng công khai.</div><div class="row-actions"><button class="btn green large" onclick="downloadBackup()">⬇️ Xuất file chuyển máy</button><button class="btn primary large" onclick="document.getElementById('restoreFile').click()">📂 Nhập file từ máy khác</button><input id="restoreFile" class="hidden" type="file" accept=".json,application/json" onchange="restoreBackup(this)"></div></div><div class="danger-zone"><b>Lưu ý trước khi nhập file:</b><br><small>Dữ liệu đang có trên máy nhận sẽ được thay bằng dữ liệu trong file. Phần mềm sẽ kiểm tra file và cho xem số lượng dữ liệu trước khi xác nhận. Một bản sao an toàn của máy nhận sẽ được lưu trước khi khôi phục.</small></div></div></div></section>
+</main>
+</div>
+
+<nav class="mobile-bottom" aria-label="Điều hướng">
+  <button data-page="dashboard" class="active"><span>🏠</span>Hôm nay</button>
+  <button onclick="openTx('IN')"><span>📥</span>Nhập</button>
+  <button onclick="openTx('OUT')"><span>📤</span>Xuất</button>
+  <button data-page="products"><span>📦</span>Hàng</button>
+  <button data-page="settings"><span>⚙️</span>Khác</button>
+</nav>
+<div id="modal" class="modal-bg" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="modal-head"><h2 id="modalTitle"></h2><button class="close" aria-label="Đóng" onclick="closeModal()">×</button></div><div id="modalBody"></div></div></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="/app.js?v=2.0.0" defer></script>
+</body>
+</html>

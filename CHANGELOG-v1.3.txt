@@ -1,0 +1,14 @@
+Kho Nha Minh Desktop v1.3.0
+
+- Ho tro import truc tiep Excel cu .xls (Excel 97-2003) va .xlsx.
+- Importer tu tim header trong 60 dong dau, phu hop file co tieu de/merge o phia tren.
+- Nhan nhieu ten cot: Ten NVL, Ten nguyen vat lieu, Ten gia vi, Ten CCDC, Ten cong cu, Ten dung cu, Ten hang; DVT/Don vi tinh; Ton dau/Nhap/Xuat/Ton cuoi.
+- Neu khong co Ton cuoi, tu tinh Ton dau + Nhap - Xuat.
+- Tu phan loai sheet CCDC/Dung cu -> Cong cu / Dung cu; NVL/Gia vi/Nguyen lieu -> Nguyen lieu / Gia vi.
+- Them man hinh xem truoc truoc khi import.
+- Khi hang da co, nguoi dung chon 1 trong 3 cach:
+  1) Bo qua (mac dinh, an toan nhat)
+  2) Cap nhat nhom/ghi chu, giu ton
+  3) Dong bo ton theo Excel
+- Dong bo ton duoc ghi thanh phieu dieu chinh rieng (ADJUST_IN/ADJUST_OUT), khong tinh vao Nhap/Xuat cua bao cao ngay/tuan/thang.
+- Khong am tham doi ma hang da ton tai.

@@ -1,0 +1,13 @@
+KHO NHA MINH
+============
+
+Mẹ chỉ cần nhớ:
+
+1. Nhấp đúp biểu tượng "Kho Nhà Mình" trên màn hình Desktop.
+2. Nhập mật khẩu.
+3. Hàng về -> bấm "Nhập hàng".
+4. Hàng đi -> bấm "Xuất hàng".
+5. Có loại hàng mới -> bấm "Thêm mặt hàng".
+
+Không cần mở Docker, MySQL, CMD hay trình duyệt trước.
+Không cần tự sao lưu: phần mềm tự sao lưu mỗi ngày khi mở.

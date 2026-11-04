@@ -1,0 +1,40 @@
+KHO NHA MINH v1.7.0 - VAN HANH LAU DAI
+
+1. Kiem ke thuc te
+- Chon mat hang, nhap so dem thuc te, ngay gio va ghi chu.
+- Tu tinh chenh lech voi ton he thong.
+- Tu tao giao dich dieu chinh va cap nhat ton.
+- Luu lich su 100 lan kiem ke gan nhat.
+
+2. Danh sach can mua
+- Tu dong lay cac mat hang cham muc ton toi thieu.
+- Them truong "Muc muon co sau khi mua" cho tung mat hang.
+- Tu goi y so luong can mua.
+- Cho chon tung mon va xuat Excel.
+
+3. Sao luu va khoi phuc
+- Nut tai backup JSON trong Cai dat.
+- Backup gom hang hoa, lich su nhap/xuat va chi phi.
+- Co chuc nang khoi phuc co canh bao xac nhan.
+- Co che backup database tu dong khi mo app van duoc giu nguyen.
+
+4. Nhat ky thay doi
+- Ghi lai them/sua/xoa hang, nhap/xuat, sua/xoa phieu, chi phi, kiem ke va khoi phuc backup.
+- Xem 200 thao tac gan nhat tu Cai dat.
+
+5. Chong tao trung
+- Khi them thu cong, neu trung ten + don vi tinh voi hang da co, phan mem chan va yeu cau tim lai hang cu.
+
+6. Giu nguyen cac phan da on dinh cua 1.6.2/1.6.3
+- Xoa phieu cap nhat ton dung va dong bo giao dien ngay.
+- Chon ngay gio phieu.
+- Import XLS/XLSX.
+- Bao cao Excel ngay/tuan/thang.
+- Phieu nhap/xuat theo ngay.
+- Lich su rieng tung mat hang.
+
+7. Quen mat khau
+- Lan dau tao mat khau, app sinh ma khoi phuc KHO-XXXX-XXXX.
+- Co nut Quen mat khau o man hinh dang nhap.
+- Nguoi dung cu nang cap len 1.7.0 co the vao Cai dat -> Tao ma khoi phuc.
+- Tao ma moi se lam ma cu het hieu luc.

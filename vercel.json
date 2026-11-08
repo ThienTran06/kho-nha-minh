@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "outputDirectory": "src/main/resources/static",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://kho-nha-minh.onrender.com/api/:path*"
+    }
+  ]
+}
